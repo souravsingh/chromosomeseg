@@ -8,14 +8,14 @@ Training Related:
 -d,--learningRateDecay (default 1e-7) learning rate decay (in # samples)
 -w,--weightDecay (default 2e-4) L2 penalty on the weights
 -m,--momentum (default 0.9) momentum
--b,--batchSize (default 10) batch size
+-b,--batchSize (default 100) batch size
 --maxepoch (default 300) maximum number of training epochs
 --plot plot training/testing error
 --lrDecayEvery (default 100) Decay learning rate every X epoch by 1e-1
 Device Related:
 -t,--threads (default 8) number of threads
 -i,--devid (default 1) device ID (if using CUDA)
---nGPU (default 2) number of GPUs you want to train on
+--nGPU (default 1) number of GPUs you want to train on
 --save (default /media/) save trained model here
 Dataset Related:
 --channels (default 3)
