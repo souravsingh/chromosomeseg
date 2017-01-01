@@ -1,12 +1,5 @@
-----------------------------------------------------------------------
--- Create model and loss to optimize.
---
--- Adam Paszke,
--- May 2016.
-----------------------------------------------------------------------
-
-require 'torch'   -- torch
-require 'image'   -- to visualize the dataset
+require 'torch'   
+require 'image'   
 
 torch.setdefaulttensortype('torch.FloatTensor')
 
