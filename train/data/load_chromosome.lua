@@ -31,14 +31,14 @@ end
 ----------------------------------------------------------------------
 -- Main section
 local loadedFromCache = false
-local cacheDir = paths.concat(opt.cachepath, 'camVid')
-local camvidCachePath = paths.concat(opt.cachepath, 'camVid', 'data.t7')
+local cacheDir = paths.concat(opt.cachepath, 'deepFISH')
+local chromosomeCachePath = paths.concat(opt.cachepath, 'deepFISH', 'data.t7')
 
 if not paths.dirp(cacheDir) then paths.mkdir(cacheDir) end
 
 if opt.cachepath ~= "none" and paths.filep(camvidCachePath) then
    print('Loading cache data')
-   local dataCache = torch.load(camvidCachePath)
+   local dataCache = torch.load(chromosomeCachePath)
    assert(dataCache.trainData ~= nil, 'No trainData')
    assert(dataCache.testData ~= nil, 'No testData')
    trainData = dataCache.trainData
@@ -138,13 +138,13 @@ end
 
 ----------------------------------------------------------------------
 if opt.cachepath ~= "none" and not loadedFromCache then
-    print('==> saving data to cache: ' .. camvidCachePath)
+    print('==> saving data to cache: ' .. chromosomeCachePath)
     local dataCache = {
        trainData = trainData,
        testData = testData,
        histClasses = histClasses,
     }
-    torch.save(camvidCachePath, dataCache)
+    torch.save(chromosomeCachePath, dataCache)
     dataCache = nil
     collectgarbage()
 end
