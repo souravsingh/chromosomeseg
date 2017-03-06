@@ -610,9 +610,9 @@ class ENet(nn.Module):
 
 
 if __name__ == '__main__':
-    nclasses = 15
+    nclasses = 4
     train = True
-    niter = 100
+    niter =200
     times = torch.FloatTensor(niter)
 
     model = ENet(nclasses, batch_size, nitern, height, width)
