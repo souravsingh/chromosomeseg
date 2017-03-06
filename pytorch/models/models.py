@@ -615,12 +615,7 @@ if __name__ == '__main__':
     niter = 100
     times = torch.FloatTensor(niter)
 
-    batch_size = 1
-    nchannels = 3
-    height = 360
-    width = 480
-
-    model = ENet(nclasses)
+    model = ENet(nclasses, batch_size, nitern, height, width)
     loss = nn.NLLLoss2d()
     softmax = nn.Softmax()
 
